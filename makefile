@@ -12,5 +12,9 @@ sample3 = camera/main.cpp
 sample3_out = camera/app
 compile_sample3 = $(cc) $(sample3) -o $(sample3_out)
 
+sample4 = lighting/main.cpp
+sample4_out = lighting/app
+compile_sample4 = $(cc) $(sample4) -o $(sample4_out)
+
 all:
-	$(compile_sample1) && $(compile_sample2) && $(compile_sample3)
+	$(compile_sample1) && $(compile_sample2) && $(compile_sample3) && $(compile_sample4)
