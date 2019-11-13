@@ -8,5 +8,9 @@ sample2 = texture/main.cpp
 sample2_out = texture/app
 compile_sample2 = $(cc) $(sample2) -o $(sample2_out)
 
+sample3 = camera/main.cpp
+sample3_out = camera/app
+compile_sample3 = $(cc) $(sample3) -o $(sample3_out)
+
 all:
-	$(compile_sample1) && $(compile_sample2)
+	$(compile_sample1) && $(compile_sample2) && $(compile_sample3)
