@@ -4,6 +4,6 @@ all samples are compiled successfully on my laptop(MacBook Pro 15 late 2013, 10.
 
 to compile:
 
-first install dependencies: `glfw3`, `glm` and `assimp`. all can be installed with `homebrew`.
+first install dependencies: `gcc`, `glfw3`, `glm` and `assimp`. all can be installed with `homebrew`.
 
 then simply run `make` at root folder and check out all excutables.
