@@ -108,7 +108,7 @@ GLFWwindow* initWindow(int w, int h)
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   // create window
-  GLFWwindow* window = glfwCreateWindow(width, height, "OpenGL", NULL, NULL);
+  GLFWwindow* window = glfwCreateWindow(width, height, "Model Loading", NULL, NULL);
   if (!window) {
     glfwTerminate();
     return NULL;
