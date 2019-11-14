@@ -31,7 +31,6 @@ int main(int argc, char* argv[])
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
   glfwSetKeyCallback(window, key_callback);
 
-  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   glfwSwapInterval(1);
 
   // build and compile shaders
