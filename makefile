@@ -22,3 +22,18 @@ compile_sample5 = $(cc) $(sample5) -o $(sample5_out)
 
 all:
 	$(compile_sample1) ; $(compile_sample2) ; $(compile_sample3) ; $(compile_sample4) ; $(compile_sample5)
+
+triangle: the-hello-world-triangle/*.* 
+	$(compile_sample1)
+
+texture: texture/*.*
+	$(compile_sample2)
+
+camera: camera/*.*
+	$(compile_sample3)
+
+lighting: lighting/*.*
+	$(compile_sample4)
+
+model: model_loading/*.*
+	$(compile_sample5)
