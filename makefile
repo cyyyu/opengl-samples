@@ -21,4 +21,4 @@ sample5_out = model_loading/app
 compile_sample5 = $(cc) $(sample5) -o $(sample5_out)
 
 all:
-	$(compile_sample1) && $(compile_sample2) && $(compile_sample3) && $(compile_sample4) && $(compile_sample5)
+	$(compile_sample1) ; $(compile_sample2) ; $(compile_sample3) ; $(compile_sample4) ; $(compile_sample5)
