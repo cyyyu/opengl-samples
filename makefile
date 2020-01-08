@@ -20,6 +20,10 @@ sample5 = model_loading/main.cpp
 sample5_out = model_loading/app
 compile_sample5 = $(cc) $(sample5) -o $(sample5_out)
 
+sample6 = shadow/main.cpp
+sample6_out = shadow/app
+compile_sample6 = $(cc) $(sample6) -o $(sample6_out)
+
 all:
 	$(compile_sample1) ; $(compile_sample2) ; $(compile_sample3) ; $(compile_sample4) ; $(compile_sample5)
 
@@ -37,3 +41,6 @@ lighting: lighting/*.*
 
 model: model_loading/*.*
 	$(compile_sample5)
+
+shadow: shadow/*.*
+	$(compile_sample6)
