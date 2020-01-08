@@ -105,10 +105,6 @@ int main(int argc, char* argv[])
   }
 
   glm::vec3 lightPos = glm::vec3(3.0f);
-  float near_plane = 1.0f, far_plane = 100.0f;
-  glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
-  glm::mat4 lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-  glm::mat4 lightSpaceMatrix = lightProjection * lightView;
 
   while (!glfwWindowShouldClose(window)) {
     float currentFrame = glfwGetTime();
@@ -118,6 +114,15 @@ int main(int argc, char* argv[])
 
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // animate light
+    lightPos.x = glm::sin(currentFrame) * 6;
+    lightPos.z = glm::cos(currentFrame) * 6;
+
+    float near_plane = 1.0f, far_plane = 100.0f;
+    glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+    glm::mat4 lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::mat4 lightSpaceMatrix = lightProjection * lightView;
 
     // gen depth map with framebuffer
     {
@@ -163,6 +168,7 @@ int main(int argc, char* argv[])
       shader.setMat4("view", view);
       shader.setMat4("lightSpaceMatrix", lightSpaceMatrix);
       shader.setVec3("cameraPos", camera.Position);
+      shader.setVec3("lightPos", lightPos);
 
       // render the plane
       {

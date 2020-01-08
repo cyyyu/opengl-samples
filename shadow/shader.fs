@@ -10,8 +10,8 @@ in VS_OUT {
 uniform vec3 cameraPos;
 uniform vec3 objColor;
 uniform sampler2D shadowMap;
+uniform vec3 lightPos;
 
-const vec3 lightPos = vec3(3.0);
 const vec3 lightColor = vec3(1.0); // white
 
 float shadowCalculation(vec4 fragPosLightSpace)
@@ -71,7 +71,6 @@ void main() {
   float shadow = shadowCalculation(fs_in.FragPosLightSpace);
   vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * objColor;
 
-  //vec3 result = (ambient + (1.0 - shadow) * (diffuse + specular)) * objColor;
   vec3 result = (ambient + (1.0 - shadow) * (diffuse + specular)) * objColor;
 
   FragColor = vec4(result, 1.0);
