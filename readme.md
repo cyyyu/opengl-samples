@@ -6,12 +6,15 @@ to compile:
 
 first install dependencies: `gcc`, `glfw3`, `glm` and `assimp`. all can be installed with `homebrew`.
 
-then simply run `make` at root folder and check out all excutables.
+---
+
+run `make` to compile and check out these executables: 
 
 * `the-hello-world-triangle/app`
 * `texture/app`
 * `camera/app`
 * `lighting/app`
 * `model_loading/app`
+* `shadow/app`
 
 <img style="margin:0 auto;" src="./demo.jpg" width="600" />
